@@ -19,6 +19,7 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#features">Features</a></li>
+            <li><button id="theme-toggle" class="sdv-button btn-small" style="padding: 5px 10px; margin-right: 10px;" aria-label="Toggle Theme">🌙</button></li>
             <li><a href="#download" class="sdv-button btn-small">Download APK</a></li>
         </ul>
     </nav>
@@ -124,6 +125,28 @@
     <footer class="sdv-panel-dark" style="margin: 0; border-radius: 0; text-align: center; padding: 2rem;">
         <p>&copy; 2026 Aircast AQI Monitor. Built for everyone.</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check local storage for theme preference
+        if(localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if(body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            }
+        });
+    </script>
 </body>
 
 </html>

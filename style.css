@@ -1,8 +1,12 @@
 :root {
-    /* Stardew Valley Color Palette */
-    --sdv-panel-bg: #f9d899; /* Light parchment/wood */
-    --sdv-panel-border: #9b5a2b; /* Dark wood border */
-    --sdv-panel-dark-bg: #d0874c; /* Darker wood */
+    /* Light Theme (Daytime) */
+    --bg-gradient-1: #84ccdb;
+    --bg-gradient-2: #b8e1a8;
+    --bg-gradient-3: #7db962;
+
+    --sdv-panel-bg: #f9d899;
+    --sdv-panel-border: #9b5a2b;
+    --sdv-panel-dark-bg: #d0874c;
     --sdv-panel-dark-border: #63331a;
     --sdv-text-dark: #4b2311;
     --sdv-text-light: #fef0cd;
@@ -10,6 +14,24 @@
     --sdv-button-border: #733113;
     --sdv-button-hover: #e89f5a;
     --sdv-yellow: #f4c82b;
+}
+
+body.dark-theme {
+    /* Dark Theme (Night time) */
+    --bg-gradient-1: #1a1a3a;
+    --bg-gradient-2: #2b3a5c;
+    --bg-gradient-3: #1a2a22;
+
+    --sdv-panel-bg: #b89f6b;
+    --sdv-panel-border: #523016;
+    --sdv-panel-dark-bg: #734928;
+    --sdv-panel-dark-border: #381c0e;
+    --sdv-text-dark: #2a1309;
+    --sdv-text-light: #fef0cd;
+    --sdv-button-bg: #9c602e;
+    --sdv-button-border: #4d200c;
+    --sdv-button-hover: #b5743b;
+    --sdv-yellow: #d1ab24;
 }
 
 * {
@@ -25,8 +47,8 @@ html {
 
 body {
     /* Soft, attractive gradient background (Sky to Grass) */
-    background-color: #84ccdb;
-    background-image: linear-gradient(180deg, #84ccdb 0%, #b8e1a8 50%, #7db962 100%);
+    background-color: var(--bg-gradient-1);
+    background-image: linear-gradient(180deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 50%, var(--bg-gradient-3) 100%);
     background-attachment: fixed;
     color: var(--sdv-text-dark);
     font-family: 'VT323', monospace;
